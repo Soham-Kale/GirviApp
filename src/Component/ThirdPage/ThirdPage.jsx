@@ -46,7 +46,7 @@ function ThirdPage() {
                     marginTop: '-90px', // Move the "Register" text 40px above its current position
                 }}>
                     Regi
-                    <Box component="span" sx={{ color: '#FFD500' }}>ster Done</Box>
+                    <Box component="span" sx={{ color: '#FFD500' }}>ster</Box>
                 </Typography>
 
                 <Typography variant="h6"
