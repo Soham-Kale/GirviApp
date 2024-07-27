@@ -19,6 +19,8 @@ function Interest() {
             <h6 className='tag'><Button onClick={back} sx={{
             color:"#FFD500", 
             marginRight: "-20px",
+            ml: "30px",
+            ml: {lg: "45%",  xs: "40px", sm: "20%", md: "26%"},
             "&:hover":{backgroundColor:'transparent'}
             }}><KeyboardBackspace/></Button> &nbsp; New Transaction</h6><br />             
             <Box1/>
@@ -72,11 +74,11 @@ function Box1() {
     }    
     return(
         <>
-            <div className='buttons'>
+            <Box sx={{mt: "30px"}} className='buttons'>
                 <button onClick={interestPage} className='buttonStyle2'><span>Interest</span></button>
                 <button onClick={priciplePage} className='buttonStyle2'><span>Principal</span></button>
                 <button onClick={topUpPage} className='buttonStyle2'><span>Top-up</span></button>
-            </div>
+            </Box>
             <div className='flexBox'>
                 <h6 className='closeDate'>Close Date : </h6>
                 <input className='month' type="date" />

@@ -18,6 +18,7 @@ function LoanProfile() {
             <h6 className='tag'><Button onClick={circlePage} sx={{
             color:"#FFD500", 
             marginRight: "-20px",
+            ml: {lg: "45%",  xs: "10px", sm: "24%", md: "26%"},
             "&:hover":{backgroundColor:'transparent'}   
             }}><KeyboardBackspace/></Button> &nbsp;  Loan Profile</h6> &nbsp;&nbsp;
 

@@ -2,7 +2,6 @@ import { Box, Button, Grid, TextField, Typography } from '@mui/material'
 import image from '../asset/img.png'
 import { useNavigate } from 'react-router-dom'
 import {  useState } from 'react'
-import { Link } from "react-router-dom";
 import axios from 'axios'
 import './second.css'
 
@@ -23,14 +22,13 @@ const SecondPage = ({setCurrentNumber=()=>{}}) => {
 
     const header = { "Access-Control-Allow-Origin": "*" };
 
-
     const handleSubmit =(e)=> {
         e.preventDefault(e);
         setCurrentNumber(phoneNumber)
         if(phoneNumber.length == ""|| phoneNumber.length>10||phoneNumber.length<10){
             setDisable(true);
             alert("Please enter a valid number");
-        }else{
+        } else{
             navigate('/verificationPage')
         }
 
@@ -38,9 +36,8 @@ const SecondPage = ({setCurrentNumber=()=>{}}) => {
             phoneNumber: phoneNumber,
             header,
         })
-        .then((resp) => console.log(resp.data) )
+        .then((resp) => console.log(resp.data))
         .catch((error) => console.log(error))
-
     }
 
     return (
@@ -56,8 +53,8 @@ const SecondPage = ({setCurrentNumber=()=>{}}) => {
                         component="img"
                         src={image}
                         sx={{
-                            width: { lg: 500, sm: 370, xs: '90%' },
-                            height: { lg: 460, sm: 350, xs: 'auto' },
+                            width: { lg: 600, sm: 370, xs: '90%' },
+                            height: { lg: 600, sm: 350, xs: 'auto' },
                             objectFit: 'cover',
                         }}
                     />
@@ -115,7 +112,6 @@ const SecondPage = ({setCurrentNumber=()=>{}}) => {
                     <Button
                         variant="contained"
                         onClick={handleSubmit}
-                        // onClick={goNext}
                         sx={{
                             backgroundColor: "#FFD500",
                             width: '239px',

@@ -16,7 +16,8 @@ function closeLoan() {
             <h6 className='tag'><Button onClick={circlePage} sx={{
             color:"#FFD500", 
             marginRight: "-20px",
-            "&:hover":{backgroundColor:'transparent'}
+            "&:hover":{backgroundColor:'transparent'},
+            ml: {lg: "45%",  xs: "10px", sm: "24%", md: "26%"},
             }}><KeyboardBackspace/></Button> &nbsp; Close Loan</h6><br /> 
             <Box3/>
         </div>
@@ -26,7 +27,7 @@ function closeLoan() {
 function Box3() {
     return(
         <>
-            <div className='stypeInput'>
+            <Box sx={{mt: "10px"}} className='stypeInput'>
                 <div className='tagsCombo'>
                     <h6 className='bold'><span>#1002</span></h6>
                     <h6 className='multipleDate'>01-01-2024  To  01-06-2024</h6>
@@ -46,7 +47,7 @@ function Box3() {
                         <td>25 Months</td>
                     </tr>
                 </table>
-            </div>
+            </Box>
 
             <div className='flexBox'>
                 <h6 className='closeDate'>Close Date : </h6>

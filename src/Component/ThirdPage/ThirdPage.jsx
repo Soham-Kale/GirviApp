@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import image from "../asset/img.png"
 import "./third.css"
 import { useState } from "react";
-import { Box, Button, Grid, TextField, Typography } from "@mui/material";
+import { Box, Button, Grid, Input, TextField, Typography } from "@mui/material";
 
 function ThirdPage() {
 
@@ -30,8 +30,8 @@ function ThirdPage() {
                         component="img"
                         src={image}
                         sx={{
-                            width: { lg: 500, sm: 370, xs: '80%' },
-                            height: { lg: 450, sm: 350, xs: 'auto' },
+                            width: { lg: 600, sm: 370, xs: '80%' },
+                            height: { lg: 600, sm: 350, xs: 'auto' },
                             objectFit: 'cover',
                         }}
                     />
@@ -61,11 +61,7 @@ function ThirdPage() {
                 >Create your new account</Typography>
 
                 <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'center' }}>
-                    {/* <TextField id="outlined-basic" label="Business Name *" variant="outlined" />
-                    <TextField id="outlined-basic" label="First Name *" sx={{ marginTop: '10px' }} variant="outlined" />
-                    <TextField id="outlined-basic" label="Last Name *" sx={{ marginTop: '10px' }} variant="outlined" />
-                    <TextField id="outlined-basic" label="Mobile Number  *" sx={{ marginTop: '10px' }} variant="outlined" /> */}
-                        <input type="text" className="inpBox" placeholder="   Business Name *" />
+                        <input sx={{height: "50px"}} type="text" className="inpBox" placeholder="   Business Name *" />
                         <input type="text" className="inpBox" placeholder="   First Name *"/>
                         <input type="text" className="inpBox" placeholder="   Last Name *"/>
                         <input type="text" className="inpBox" placeholder="   Mobile Number  *"/>

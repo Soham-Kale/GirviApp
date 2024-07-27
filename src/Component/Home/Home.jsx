@@ -1,24 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Button, Grid, Typography } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import Stack from '@mui/material/Stack';
+import { Ballot, OtherHouses, People, PermIdentity } from '@mui/icons-material';
 import './home.css'
+
 
 function Home() {
     return (
-        <Box>
-            <Typography variant='h5' sx={{mt: "20px"}} className='styleOfVarient'> Home</Typography>
+        <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+            <Typography variant='h5' sx={{ mt: "10px", 
+                ml: {lg: "30%",  xs: "10px", sm: "24%", md: "26%"}}} className='styleOfVarient'> Home</Typography>
             <Box display={"flex"} justifyContent={"center"} alignItems={"center"} >
-                <Box flexDirection={"column"} sx={{padding:3}} >
+                <Box flexDirection={"column"} sx={{ padding: 3, ml: "-12px" }}>
                     <Box1 />
-                    <Box sx={{marginTop:3}}>
-                    <Box3 />
+                    <Box sx={{ marginTop: 3 }}>
+                        <Box3 />
                     </Box>
                 </Box>
-    
-                <Box sx={{padding:3}} >
+
+                <Box sx={{ padding: 3, ml: "-5px" }} >
                     <Box2 />
-                    <Box sx={{marginTop:3}}>
-                    <Box4 />
+                    <Box sx={{ marginTop: 3 }}>
+                        <Box4 />
                     </Box>
                 </Box>
             </Box>
@@ -187,35 +192,43 @@ function Box4() {
 }
 
 function CustomerInfo() {
-    const dues = useNavigate();
-    function duesPage() {
-        dues('/Dues');
-    }
-    const customer = useNavigate();
-    function customerPage() {
-        customer('/CustomerPage');
-    }
-    const home = useNavigate();
-    function homePage() {
-        home('/Home');
-    }
-    const Account = useNavigate();
-    function AccountPage() {
-        Account('/Account');
-    }
+
+    const [activeButton, setActiveButton] = useState('');
+    const navigate = useNavigate();
+
+    const handleButtonClick = (button) => {
+        setActiveButton(button);
+        switch (button) {
+            case 'home':
+                navigate('/Home');
+                break;
+            case 'customer':
+                navigate('/CustomerPage');
+                break;
+            case 'dues':
+                navigate('/Dues');
+                break;
+            case 'account':
+                navigate('/Account');
+                break;
+            default:
+                break;
+        }
+    };
+
     return (
         <>
-            <Typography variant='p' className='recentTran'>Recent Transactions</Typography>
-            <div className="name4">
+            <Typography sx={{ml: {lg: "40%",  xs: "14%", sm: "32%", md: "35%"}}} variant='p'>Recent Transactions</Typography>
+            <Box className="name4">
                 <Box className='flex'>
                     <img className='darkCircle' />
                     <Typography className='customeName4'>Soham Kale</Typography>
                     <Typography className='paragra'>03-03-2024</Typography>
                     <Typography className='amount2'>10,000.00</Typography>
                 </Box>
-            </div>
+            </Box>
 
-            <Box sx={{mt: "10px"}} className="name4">
+            <Box sx={{ mt: "-10px" }} className="name4">
                 <Box className='flex'>
                     <img className='darkCircle' />
                     <Typography className='customeName4'>Harsh Kale</Typography>
@@ -224,13 +237,60 @@ function CustomerInfo() {
                 </Box>
             </Box>
 
-            <Box className='bottom'>
-                <ul>
-                    <li><button onClick={homePage}>Home</button></li>
-                    <li><button onClick={customerPage}>Customers</button></li>
-                    <li><button onClick={duesPage}>Dues</button></li>
-                    <li><button onClick={AccountPage}>Account</button></li>
-                </ul>
+            <Box  sx={{ position: 'relative', mt: 'auto' }} className='bottom'>
+                <Stack direction="row" sx={{ display: 'flex', justifyContent: 'space-around' }}>
+                    <IconButton
+                        onClick={() => handleButtonClick('home')}
+                        sx={{ color: activeButton === 'home' ? 'blue' : 'inherit'}}
+                    >
+                        <OtherHouses sx={{ mb: "35px", mr: "-10px" , mt: "5px"}}/>
+                        <Button sx={{ mt: "15px", color: "black", ml: "-30px"}}>
+                            <Typography sx={{
+                                fontSize: "13px",
+                                mt: "5px"
+                            }}>Home</Typography>
+                        </Button>
+                    </IconButton>
+
+                    <IconButton
+                        onClick={() => handleButtonClick('customer')}
+                        sx={{ color: activeButton === 'customer' ? 'blue' : 'inherit' }}
+                    >
+                        <People sx={{ mb: "35px", mr: "-10px" , mt: "5px"}} />
+                        <Button sx={{ mt: "15px", color: "black", ml: "-50px" }}>
+                            <Typography sx={{
+                                fontSize: "13px",
+                                mt: "5px"
+                            }}>Customer</Typography>
+                        </Button>
+                    </IconButton>
+
+                    <IconButton
+                        onClick={() => handleButtonClick('dues')}
+                        sx={{ color: activeButton === 'dues' ? 'blue' : 'inherit' }}
+                    >
+                        <Ballot sx={{ mb: "35px", mr: "-10px", mt: "5px" }} />
+                        <Button sx={{ mt: "15px", color: "black", ml: "-32px" }}>
+                            <Typography sx={{
+                                fontSize: "13px",
+                                mt: "5px"
+                            }}>Dues</Typography>
+                        </Button>
+                    </IconButton>
+
+                    <IconButton
+                        onClick={() => handleButtonClick('account')}
+                        sx={{ color: activeButton === 'account' ? 'blue' : 'inherit' }}
+                    >
+                        <PermIdentity sx={{ mb: "35px", mr: "-10px", mt: "5px" }} />
+                        <Button sx={{ mt: "15px", color: "black", ml: "-40px" }}>
+                            <Typography sx={{
+                                fontSize: "13px",
+                                mt: "5px"
+                            }}>Account</Typography>
+                        </Button>
+                    </IconButton>
+                </Stack>
             </Box>
         </>
     )

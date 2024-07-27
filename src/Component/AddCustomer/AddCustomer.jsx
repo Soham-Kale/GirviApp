@@ -32,7 +32,10 @@ export const AddCustomer = () => {
     <Box item component={Box} display='flex' flexDirection='column'>
         <h6 className='tag'><Button onClick={customerPage} sx={{
           color:"#FFD500",   
-          marginRight: "-20px" 
+          marginRight: "-20px" ,
+          ml: "40px",
+          ml: {lg: "50%",  xs: "80px", sm: "20%", md: "26%"},
+          "&:hover": { backgroundColor: 'transparent' }
         }}><KeyboardBackspace/></Button> &nbsp; ADD Customers</h6><br />        
         
         <img className='custProfile'></img>
@@ -61,7 +64,7 @@ export const AddCustomer = () => {
               sx={{
                 marginTop: "15px",
                 width:  {lg: "25%", sm: "28%", xs: "60%"},
-                marginLeft: {lg: "-20%", sm: "-30%", xs:"-55px"},
+                marginLeft: {lg: "-25%", sm: "-30%", xs:"-55px"},
                 height: "40px",
                 marginBottom: "20px"
               }}
