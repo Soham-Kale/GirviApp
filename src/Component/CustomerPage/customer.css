@@ -4,16 +4,17 @@
     color: #FFD500;
     font-family: Inter;
     padding-left: 10px;
-    font-size: 17px;
+    font-size: 22px;
     font-weight: 700;
     margin-right: 50%;
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 220px) {
     .tag {
         text-align: center;
         margin: auto;
-        margin-left: 10%;
+        margin-top: 25px;
+        margin-left: -30%;
         margin-right: 30%;
     }
 }
@@ -147,7 +148,7 @@ li button {
     border: none;
     padding-left: initial;
     font-family: Inter;
-    /* font-size: 13px; */
+    font-size: 13px;
     font-weight: 610;
 }
 
@@ -155,4 +156,28 @@ li button {
     margin-left: 36.5%;
     border: none;
     background-color: #FFFFFF;
+}
+
+/* Chat GPT */
+
+.bottom ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.bottom li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.bottom button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.bottom .active {
+  text-decoration: underline;
+  color: blue; /* Change this to your desired color */
 }

@@ -21,8 +21,8 @@ const FirstPage = () => {
                         component="img"
                         src={image}
                         sx={{
-                            width: { lg: 500, sm: 370, xs: '90%' },
-                            height: { lg: 450, sm: 350, xs: 'auto' },
+                            width: { lg: 600, sm: 370, xs: '90%' },
+                            height: { lg: 600, sm: 350, xs: 'auto' },
                             objectFit: 'cover',
                         }}
                     />

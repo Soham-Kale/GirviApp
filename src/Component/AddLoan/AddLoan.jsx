@@ -14,6 +14,7 @@ function AddLoan() {
             <h6 className='tag'><Button onClick={LoanPage} sx={{
             color:"#FFD500", 
             marginRight: "-20px",
+            ml: {lg: "45%",  xs: "10px", sm: "20%", md: "20%"},
             "&:hover":{backgroundColor:'transparent'}
             }}><KeyboardBackspace/></Button> &nbsp; Add Loan</h6> 
             <CustProfile/> <br />
