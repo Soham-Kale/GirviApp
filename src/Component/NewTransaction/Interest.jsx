@@ -19,7 +19,6 @@ function Interest() {
             <h6 className='tag'><Button onClick={back} sx={{
                 color: "#FFD500",
                 marginRight: "-20px",
-                ml: "30px",
                 ml: {lg: "45%",  xs: "40px", sm: "20%", md: "26%"},
                 "&:hover":{backgroundColor:'transparent'}
             }}><KeyboardBackspace /></Button> &nbsp; New Transaction</h6>

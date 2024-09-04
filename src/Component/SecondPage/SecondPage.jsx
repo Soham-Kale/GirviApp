@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom'
 import {  useState } from 'react'
 import axios from 'axios'
 import './second.css'
+import { toast } from 'react-toastify';
 
 const SecondPage = ({setCurrentNumber=()=>{}}) => {
-
     const [phoneNumber, setPhoneNumber] = useState("");
     const [disable, setDisable] = useState(true);
 
@@ -27,8 +27,9 @@ const SecondPage = ({setCurrentNumber=()=>{}}) => {
         setCurrentNumber(phoneNumber)
         if(phoneNumber.length == ""|| phoneNumber.length>10||phoneNumber.length<10){
             setDisable(true);
-            alert("Please enter a valid number");
+            toast("Please enter a valid number");
         } else{
+            toast("OTP Sent Successfully");
             navigate('/verificationPage')
         }
 
@@ -50,14 +51,14 @@ const SecondPage = ({setCurrentNumber=()=>{}}) => {
             >
             <Grid item>
                 <Box
-                        component="img"
-                        src={image}
-                        sx={{
-                            width: { lg: 600, sm: 370, xs: '90%' },
-                            height: { lg: 600, sm: 350, xs: 'auto' },
-                            objectFit: 'cover',
-                        }}
-                    />
+                    component="img"
+                    src={image}
+                    sx={{
+                        width: { lg: 600, sm: 370, xs: '90%' },
+                        height: { lg: 600, sm: 350, xs: 'auto' },
+                        objectFit: 'cover',
+                    }}
+                />
             </Grid>
 
                 <Box display="flex" alignItems="center" justifyContent="center" sx={{ mt: { lg: 4, md: 3, sm: 2, xs: 1 } }}>

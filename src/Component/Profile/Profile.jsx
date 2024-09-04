@@ -14,7 +14,7 @@ function Profile() {
     <Box>
       <h6 className='tag' sx={{marginLeft: "-50%", marginTop: "20px"}}><Button onClick={customerPage} sx={{
         color:"#FFD500", 
-        ml: "-18%",
+        // ml: "-18%",
         marginRight: "-20px",
         ml: {lg: "45%",  xs: "10px", sm: "24%", md: "26%"},
         "&:hover":{backgroundColor:'transparent'} 

@@ -21,7 +21,6 @@ import {
   Interest,
   Principle,
   TopUp,
-  OtpLogin
 } from "./Component/index.js"
 import { useState } from 'react';
 
@@ -54,7 +53,6 @@ function App() {
         <Route path='Interest' element={<Interest/>}></Route>
         <Route path='Principle' element={<Principle/>}></Route>
         <Route path='TopUp' element={<TopUp/>}></Route>
-        <Route path='OtpLogin' element={<OtpLogin/>}></Route>
       </Routes>
     </BrowserRouter>
   )

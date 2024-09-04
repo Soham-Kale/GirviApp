@@ -139,10 +139,10 @@ const DynamicSearch = () => {
         sx={{ 
               margin: 'auto',
               display: 'block',
-              width: '340px',
               mb: "40px",
               mt: "30px", 
-        }}
+              width: { lg: "350px", xs: "250px", sm: "300px", md: "250px" },
+            }}
       />
       {filteredCustomers.map(customer => (
         <customer.component key={customer.name} />
@@ -160,18 +160,34 @@ function People1() {
     <>
       <Button onClick={profilePage} className='styleForBtn' 
         sx={{ "&:hover": { backgroundColor: 'transparent' },
-          display: 'flex',
-          justifyContent:"center", 
-          alignItems: "center",
-          margin: "auto"
-        }}>
-        <Box className="names">
+        display: 'flex',
+        justifyContent:"center", 
+        alignItems: "center",
+        margin: "auto"
+        }}
+      >
+        <Box sx={{
+                margin: 'auto',
+                display: 'block',
+                width: { lg: "350px", xs: "250px", sm: "300px", md: "250px" },
+                height: { lg: "58px", xs: "45px", sm: "50px", md: "45px" },
+                boxShadow: '0px 1px 1px 1px rgb(111, 118, 125)',
+                borderRadius: '12px',
+            }} className="names">
           <img className='sohamImg' src={image} alt="soham" />
           <Box sx={{ marginLeft: "20%", marginTop: "-6px" }}>
-            <Typography  sx={{mb: "5px" , mt: "-8px"}} className='customerName'>Harsh Kale</Typography>
-            <Typography className='number'>8973542621</Typography>
+            <Typography sx={{
+                        mb: "5px", mt: "-8px",
+                        fontSize: { lg: "14px", xs: "12px", sm: "12px" , md: "11px" },
+                        width: "400px",
+                    }} className='customerName'>Harsh Kale</Typography>
+            <Typography sx={{
+                        mb: "5px", mt: "-5px",
+                        fontSize: { lg: "14px", xs: "12px", sm: "12px" , md: "11px" },
+                        width: "400px",
+                    }} className='number'>9274353652</Typography>
           </Box>
-        </Box> <br />
+        </Box>
       </Button>
     </>
   )
@@ -192,11 +208,26 @@ function People2() {
         margin: "auto"
         }}
       >
-        <Box className="names">
+        <Box sx={{
+                margin: 'auto',
+                display: 'block',
+                width: { lg: "350px", xs: "250px", sm: "300px", md: "250px" },
+                height: { lg: "58px", xs: "45px", sm: "50px", md: "45px" },
+                boxShadow: '0px 1px 1px 1px rgb(111, 118, 125)',
+                borderRadius: '12px',
+            }} className="names">
           <img className='sohamImg' src={image} alt="soham" />
           <Box sx={{ marginLeft: "20%", marginTop: "-6px" }}>
-            <Typography sx={{mb: "5px", mt: "-8px"}} className='customerName'>Om Dixit</Typography>
-            <Typography className='number'>9274353652</Typography>
+            <Typography sx={{
+                        mb: "5px", mt: "-8px",
+                        fontSize: { lg: "14px", xs: "12px", sm: "12px" , md: "11px" },
+                        width: "400px",
+                    }} className='customerName'>Om Dixit</Typography>
+            <Typography sx={{
+                        mb: "5px", mt: "-5px",
+                        fontSize: { lg: "14px", xs: "12px", sm: "12px" , md: "11px" },
+                        width: "400px",
+                    }} className='number'>9274353652</Typography>
           </Box>
         </Box>
       </Button>
@@ -212,20 +243,35 @@ function People3() {
   return (
     <>
       <Button onClick={profilePage} className='styleForBtn' 
-        sx={{ "&:hover": { backgroundColor: 'transparent' } ,
-          display: 'flex',
-          justifyContent:"center", 
-          alignItems: "center",
-          margin: "auto",
-          marginBottom: "50px"
-        }}>
-        <Box className="names">
+        sx={{ "&:hover": { backgroundColor: 'transparent' },
+        display: 'flex',
+        justifyContent:"center", 
+        alignItems: "center",
+        margin: "auto"
+        }}
+      >
+        <Box sx={{
+                margin: 'auto',
+                display: 'block',
+                width: { lg: "350px", xs: "250px", sm: "300px", md: "250px" },
+                height: { lg: "58px", xs: "45px", sm: "50px", md: "45px" },
+                boxShadow: '0px 1px 1px 1px rgb(111, 118, 125)',
+                borderRadius: '12px',
+            }} className="names">
           <img className='sohamImg' src={image} alt="soham" />
           <Box sx={{ marginLeft: "20%", marginTop: "-6px" }}>
-            <Typography sx={{mb: "5px"}} className='customerName'>Soham Kale</Typography>
-            <Typography className='number'>7728527871</Typography>
+            <Typography sx={{
+                        mb: "5px", mt: "-8px",
+                        fontSize: { lg: "14px", xs: "12px", sm: "12px" , md: "11px" },
+                        width: "400px",
+                    }} className='customerName'>Soham Kale</Typography>
+            <Typography sx={{
+                        mb: "5px", mt: "-5px",
+                        fontSize: { lg: "14px", xs: "12px", sm: "12px" , md: "11px" },
+                        width: "400px",
+                    }} className='number'>9274353652</Typography>
           </Box>
-        </Box>   <br />
+        </Box>
       </Button>
     </>
   )

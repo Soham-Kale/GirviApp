@@ -49,15 +49,21 @@
     margin-right: 110px;
 
     input {
-        width: 50px;
-        padding: 10px;
-        outline: none;
+        width: 50px; 
+        padding: 10px; 
+        outline: none; 
         border-radius: 10px;
+        text-decoration: none;
         text-align: center;
         background-color: #E3E3E3;
 
         &:focus {
             border: 2px solid black;
+        }
+
+        @media screen and (max-width: 480px)
+        {
+            width: 45px;
         }
     }
 }
