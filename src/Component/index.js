@@ -19,7 +19,6 @@ import Interest from "./NewTransaction/Interest";
 import Principle from "./NewTransaction/Principle";
 import TopUp from "./NewTransaction/TopUp";
 import Home from "./Home/Home";
-import OtpLogin from "./OtpLogin/OtpLogin";
 
 export {
     Home,
@@ -43,5 +42,4 @@ export {
     Interest,
     Principle,
     TopUp,
-    OtpLogin
 };

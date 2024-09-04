@@ -10,6 +10,10 @@ const NewLoan = () => {
     )
 }
 
+function updateData() {
+    
+}
+
 function AddLoan() {
     const loanProfile = useNavigate();
     function loanProfilePage() {
@@ -22,7 +26,7 @@ function AddLoan() {
             <Interest/>  <br />
             <div style={{display: 'flex', justifyContent: 'center', alignItems: "center"}}>
                 <button onClick={loanProfilePage} className='btn6'><span>Save</span></button>
-                <button className='btn5'><span>Edit</span></button>       
+                <button className='btn5' onClick={updateData()}><span>Edit</span></button>       
             </div>     
         </div>
     )
@@ -148,7 +152,6 @@ function Interest() {
     return(
         <>
             <div className='lastDiv'>
-
                 <div className='combine'>
                     <h3 className='num'><span>#1001</span></h3>
                     <h6 className='impDate'>Start Date : 16-03-2024</h6>

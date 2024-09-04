@@ -1,53 +1,62 @@
 import image from "../asset/img.png";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";  // Correctly import useNavigate
-import { Box, Typography, Button, Grid } from "@mui/material";
+import { useNavigate } from "react-router-dom"; 
+import { Box, Typography, Button, Grid, Input } from "@mui/material";
 import "./verification.css";
 import axios from "axios";
+import { toast } from 'react-toastify';
 
 function VerificationPage({ currentNumber }) {
-    const [otp, setOtp] = useState(new Array(4).fill(""));
-    const [otpValue, setOtpValue] = useState("");
-
-    const navigate = useNavigate(); // Call useNavigate at the top level of the function component
+    const [otpVal, setOtpVal] = useState(new Array(6).fill(""));
+    const navigate = useNavigate();
 
     function nextPage() {
-        navigate('/Home'); // Use navigate instead of Navigate
+        navigate('/Home');
     }
 
     function handleChange(e, index) {
         if (isNaN(e.target.value)) return false;
-        setOtp([...otp.map((data, indx) => (indx === index ? e.target.value : data))]);
+        setOtpVal([...otpVal.map((data, indx) => (indx === index ? e.target.value : data))]);
 
         if (e.target.value === "") {
             e.target.previousSibling?.focus();
         }
-
         if (e.target.value && e.target.nextSibling) {
             e.target.nextSibling.focus();
         }
     }
 
-    const header = { "Access-Control-Allow-Origin": "*" };
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        setOtpValue(otp.join(""));  // Join the otp array to form the full otp value
-        if (otp.join("").length !== 4) { // Ensure the otpValue length is exactly 4
-            alert("Please enter a valid otp");
+        const completeOtp = otpVal.join("");
+    
+        if (completeOtp.length !== 6) {
+            toast("Please enter a valid OTP");
         } else {
             axios.post("https://girvi-backend-v1.onrender.com/verifyOTP", {
-                otpVal: otp.join(""),  // Join the otp array to form the full otp value
-                number: currentNumber,
-                header,
+                otp: completeOtp,
+                phoneNumber: currentNumber,
+            }, {
+                headers: {
+                    'Content-Type': 'application/json',  // Ensure Content-Type is set
+                    'Access-Control-Allow-Origin': '*', // Ensure proper CORS handling
+                },
             })
-                .then((resp) => {
-                    console.log(resp.data);
-                    nextPage(); // Navigate to the next page on successful response
-                })
-                .catch((error) => console.log(error));
+            .then((resp) => {
+                console.log("Full Response:", resp);
+                if (resp.data.token) {
+                    console.log("Token:", resp.data.token);
+                    // Store token in local storage
+                    localStorage.setItem("authToken", resp.data.token);
+                    toast("OTP Verified Successfully");
+                    nextPage();
+                } else {
+                    toast("Token not received");
+                }
+            })
+            .catch((error) => console.log("Error:", error));
         }
-    }
+    };
 
     return (
         <>
@@ -84,7 +93,7 @@ function VerificationPage({ currentNumber }) {
                         }}>
                         Enter OTP
                     </Typography>
-
+                    
                     <Typography
                         sx={{
                             width: '370px',
@@ -98,19 +107,34 @@ function VerificationPage({ currentNumber }) {
                             marginBottom: '15px',
                             color: ' #575757'
                         }}>
-                        A 4 digit code has been sent to your +91{currentNumber}
+                        A 6 digit code has been sent to your +91{currentNumber}
                     </Typography>
 
-                    <Box className="otp-area">
-                        {otp.map((data, i) => {
+                    <Box sx={{
+                        ml: {xl: "40%", lg: "35%",md: "35%",  sm: "20%", xs: "10%"},
+                        width: {sx: "20px", }
+                    }} className="otp-area">
+                        {otpVal.map((data, i) => {
                             return <input
                                 key={i} // Add a unique key for each input element
                                 type="text"
                                 value={data}
                                 maxLength={1}
-                                //onChange={(e) => { setOtpValue(e.target.value); handleChange(e, i) }} />
                                 onChange={(e) => handleChange(e, i)} // Adjusted to avoid redundancy
                             />
+                        //     <Input
+                        //     key={i}
+                        //     id={`otp-input-${i}`}
+                        //     type="text"
+                        //     value={data}
+                        //     maxLength={1}
+                        //     onChange={(e) => handleChange(e, i)}
+                        //     onFocus={(e) => e.target.select()} // Optional: Auto-select the current value when focused
+                        //     sx={{ 
+                        //         margin: "0 5px", 
+                        //         textAlign: 'center',
+                        //     }}
+                        // />                        
                         })}
                     </Box>
 
