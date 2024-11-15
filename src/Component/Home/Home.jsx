@@ -64,7 +64,7 @@ function Box1() {
                     marginTop: { lg: "0px", xs: "-20px", md: "-0px", sm: "-20px" },
                     marginLeft: { lg: "25px", xs: "20px", sm: "20px" },
                 }}>
-                    <Typography display='inline' sx={{
+{/*                     <Typography display='inline' sx={{
                         width: { lg: "150px", xs: "145px", md: "100px", sm: "150px" },
                         fontSize: { lg: "14px", xs: "10px", md: "13px", sm: "10px" },
                         fontFamily: 'Inter',
@@ -81,7 +81,7 @@ function Box1() {
                             color: '#4CFA7E',
                             textAlign: 'center',
                         }}> 12000</Box>
-                    </Typography>
+                    </Typography> */}
                 </Box>
 
                 <Box sx={{
@@ -138,7 +138,7 @@ function Box2() {
                     marginTop: { lg: "0px", xs: "-20px", md: "0px", sm: "-20px" },
                     marginLeft: { lg: "25px", xs: "20px", sm: "20px" },
                 }}>
-                    <Typography sx={{
+{/*                     <Typography sx={{
                         width: { lg: "150px", xs: "145px", md: "100px", sm: "150px" },
                         fontSize: { lg: "14px", xs: "10px", md: "13px", sm: "10px" },
                         fontFamily: 'Inter',
@@ -155,7 +155,7 @@ function Box2() {
                             color: '#4CFA7E',
                             textAlign: 'center',
                         }}> 12000</Box>
-                    </Typography>
+                    </Typography> */}
                 </Box>
 
                 <Box sx={{
