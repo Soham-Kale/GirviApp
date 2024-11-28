@@ -140,7 +140,7 @@ const DynamicSearch = () => {
               margin: 'auto',
               display: 'block',
               mb: "40px",
-              mt: "30px", 
+              mt: {lg: "35px", xs: "-50px", sm: "-30px"},
               width: { lg: "350px", xs: "250px", sm: "300px", md: "250px" },
             }}
       />
@@ -182,7 +182,7 @@ function People1() {
                         width: "400px",
                     }} className='customerName'>Harsh Kale</Typography>
             <Typography sx={{
-                        mb: "5px", mt: "-5px",
+                        mb: "5px", mt: "5px",
                         fontSize: { lg: "14px", xs: "12px", sm: "12px" , md: "11px" },
                         width: "400px",
                     }} className='number'>9274353652</Typography>
@@ -224,7 +224,7 @@ function People2() {
                         width: "400px",
                     }} className='customerName'>Om Dixit</Typography>
             <Typography sx={{
-                        mb: "5px", mt: "-5px",
+                        mb: "5px", mt: "5px",
                         fontSize: { lg: "14px", xs: "12px", sm: "12px" , md: "11px" },
                         width: "400px",
                     }} className='number'>9274353652</Typography>
@@ -266,7 +266,7 @@ function People3() {
                         width: "400px",
                     }} className='customerName'>Soham Kale</Typography>
             <Typography sx={{
-                        mb: "5px", mt: "-5px",
+                        mb: "5px", mt: "5px",
                         fontSize: { lg: "14px", xs: "12px", sm: "12px" , md: "11px" },
                         width: "400px",
                     }} className='number'>9274353652</Typography>

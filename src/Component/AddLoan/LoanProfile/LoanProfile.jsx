@@ -51,7 +51,8 @@ function Box1() {
                         <td>20,000.00</td>
                         <td>SIMPLE</td>
                         <td>2.5%</td>
-                        <td>25 Months</td>
+                        {/* <td>25 Months</td> */}
+                        <td>25</td>
                     </tr>
                 </table>
             </div>

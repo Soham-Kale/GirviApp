@@ -11,7 +11,7 @@
     color: #000000;
 }
 
-.buttons button:hover {
+/* .buttons button:hover {
     width: 150px;
     height: 45px;
     border-radius: 20px;
@@ -24,16 +24,16 @@
     padding-top: 10px;
     line-height: 20px;
     text-align: center;
-}
+} */
 
-.buttons button span:hover {
+/* .buttons button span:hover {
     width: 55px;
     height: 20px;
     font-family: Inter;
     font-size: 20px;
     font-weight: 750;
     text-align: center;
-}
+} */
 
 @media only screen and (min-width: 400px) {
     .closeDate {

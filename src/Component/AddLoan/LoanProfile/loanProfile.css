@@ -1,7 +1,7 @@
 .stypeInput {
     margin: auto;
     width: 327px;
-    height: 90px;
+    height: 92px;
     border-radius: 20px;
     box-shadow: 0px 1px 1px 1px rgb(111, 118, 125);
 }
@@ -130,8 +130,7 @@
 
 .rowWise {
     display: flex;
-    margin-top: 20px;
-    margin-left: 10px;
+    margin: 15px 0 6px 10px;
 }
 
 @media only screen and (min-width: 320px) {
@@ -206,7 +205,7 @@
     border: none;
     width: 155px;
     height: 30px;
-    margin-left: 80px;
+    margin-left: 60px;
     border-radius: 20px;
     background-color: #FFD500;
 }

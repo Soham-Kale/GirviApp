@@ -51,7 +51,7 @@ function Box1() {
                 <Grid item>
                     <Typography sx={{
                         fontSize: { lg: "14px", xs: "13px", md: "14px", sm: "10px" },
-                        marginLeft: { lg: "0px", xs: "-20px", md: "-20px", sm: "-20px" }
+                        marginLeft: { lg: "-10px", xs: "-20px", md: "-20px", sm: "-20px" }
                     }} className='styleForInt'>Total Interest</Typography>
                     <Typography sx={{
                         fontSize: { lg: "14px", xs: "13px", md: "14px", sm: "10px" },
@@ -62,7 +62,7 @@ function Box1() {
 
                 <Box sx={{
                     marginTop: { lg: "0px", xs: "-20px", md: "-0px", sm: "-20px" },
-                    marginLeft: { lg: "25px", xs: "20px", sm: "20px" },
+                    marginLeft: { lg: "15px", xs: "20px", sm: "20px" },
                 }}>
 {/*                     <Typography display='inline' sx={{
                         width: { lg: "150px", xs: "145px", md: "100px", sm: "150px" },
@@ -85,7 +85,7 @@ function Box1() {
                 </Box>
 
                 <Box sx={{
-                    marginLeft: { lg: "-10px", xs: "30px", md: "-30px", sm: "0px" },
+                    marginLeft: { lg: "-15px", xs: "30px", md: "-30px", sm: "0px" },
                     marginTop: { lg: "0px", xs: "-1px", md: "0px", sm: "3px" },
                 }}>
                     <Typography sx={{
@@ -125,7 +125,7 @@ function Box2() {
                 <Grid item>
                     <Typography sx={{
                         fontSize: { lg: "14px", xs: "13px", md: "14px", sm: "10px" },
-                        marginLeft: { lg: "0px", xs: "-20px", md: "-20px", sm: "-20px" }
+                        marginLeft: { lg: "-10px", xs: "-20px", md: "-20px", sm: "-20px" }
                     }} className='styleForInt'>Total Principal </Typography>
                     <Typography sx={{
                         fontSize: { lg: "14px", xs: "13px", md: "14px", sm: "10px" },
@@ -136,7 +136,7 @@ function Box2() {
 
                 <Box sx={{
                     marginTop: { lg: "0px", xs: "-20px", md: "0px", sm: "-20px" },
-                    marginLeft: { lg: "25px", xs: "20px", sm: "20px" },
+                    marginLeft: { lg: "15px", xs: "20px", sm: "20px" },
                 }}>
 {/*                     <Typography sx={{
                         width: { lg: "150px", xs: "145px", md: "100px", sm: "150px" },
@@ -159,7 +159,7 @@ function Box2() {
                 </Box>
 
                 <Box sx={{
-                    marginLeft: { lg: "-10px", xs: "-30px", md: "-30px", sm: "0px" },
+                    marginLeft: { lg: "-15px", xs: "-30px", md: "-30px", sm: "0px" },
                 }}>
                     <Typography sx={{
                         fontSize: { lg: "14px", xs: "10px", md: "14px", sm: "10px" },

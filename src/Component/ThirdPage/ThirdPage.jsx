@@ -61,10 +61,10 @@ function ThirdPage() {
                 >Create your new account</Typography>
 
                 <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'center' }}>
-                        <input sx={{height: "50px"}} type="text" className="inpBox" placeholder="   Business Name *" />
-                        <input type="text" className="inpBox" placeholder="   First Name *"/>
-                        <input type="text" className="inpBox" placeholder="   Last Name *"/>
-                        <input type="text" className="inpBox" placeholder="   Mobile Number  *"/>
+                        <input sx={{height: "50px"}} type="text" className="inpBox" placeholder="Business Name *" />
+                        <input type="text" className="inpBox" placeholder="First Name *"/>
+                        <input type="text" className="inpBox" placeholder="Last Name *"/>
+                        <input type="text" className="inpBox" placeholder="Mobile Number  *"/>
                 </Box>
 
                 <Typography sx={{

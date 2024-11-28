@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Box, Button } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 import { KeyboardBackspace } from '@mui/icons-material'
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -19,15 +19,14 @@ function Interest() {
             <h6 className='tag'><Button onClick={back} sx={{
                 color: "#FFD500",
                 marginRight: "-20px",
-                ml: {lg: "45%",  xs: "40px", sm: "20%", md: "26%"},
-                "&:hover":{backgroundColor:'transparent'}
+                ml: { lg: "45%", xs: "40px", sm: "20%", md: "26%" },
+                "&:hover": { backgroundColor: 'transparent' }
             }}><KeyboardBackspace /></Button> &nbsp; New Transaction</h6>
 
             <Box3 />
         </div>
     )
 }
-
 
 function BasicSelect() {
     const [age, setAge] = React.useState('');
@@ -36,10 +35,10 @@ function BasicSelect() {
     };
 
     return (
-        <Box sx={{ 
-                width: {lg: "20%", sm: "40%", xs: "80%"},
-                margin:"auto"
-            }}>
+        <Box sx={{
+            width: { lg: "20%", sm: "40%", xs: "80%" },
+            margin: "auto"
+        }}>
 
             <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">Paid by</InputLabel>
@@ -60,38 +59,88 @@ function BasicSelect() {
 }
 
 function Box3() {
-    const interest = useNavigate();
-    function interestPage() {
-        interest('/Interest');
-    }
-    const priciple = useNavigate();
-    function priciplePage() {
-        priciple('/Principle');
-    }
-    const topUp = useNavigate();
-    function topUpPage() {
-        topUp('/TopUp');
-    }
+    const navigate = useNavigate();
+    const [activeButton, setActiveButton] = useState(""); 
+
+    const interestCal = () => {
+        setActiveButton("Interest"); 
+        navigate("/Interest"); 
+    };
+
+    const principleCal = () => {
+        setActiveButton("Principle"); 
+        navigate("/Principle");  
+    };
+
+    const topUpCal = () => {
+        setActiveButton("TopUp"); 
+        navigate("/TopUp");  
+    };
+
     return (
         <>
-            <Box sx={{mt: "50px"}} className='buttons'>
-                <button onClick={interestPage} className='buttonStyle2'><span>Interest</span></button>
-                <button onClick={priciplePage} className='buttonStyle2'><span>Principal</span></button>
-                <button onClick={topUpPage} className='buttonStyle2'><span>Top-up</span></button>
-            </Box>
-            <div className='flexBox'>
-                <h6 className='closeDate'>Close Date : </h6>
-                <input className='month' type="date" />
+            <Box sx={{ mt: "60px" }} className="buttons">
+                {/* Interest Button */}
 
-                <h6 className='closeDate'>Amount : </h6>
-                <input type="text" className='month' placeholder='Enter Amount' />
-                <br /><br />
+                <Button
+                    variant="outlined"
+                    style={{ border: "none", color: "black" }}
+                    sx={{
+                        backgroundColor: activeButton === "Interest" ? "#FFD500" : "transparent",
+                        borderRadius: 20,
+                    }}
+                    onClick={interestCal}
+                >
+                    <Typography>Interest</Typography>
+                </Button>
+
+                {/* Principle Button */}
+                <Button
+                    variant="outlined"
+                    style={{ border: "none", color: "black" }}
+                    sx={{
+                        backgroundColor: activeButton === "Principle" ? "#FFD500" : "transparent",
+                        borderRadius: 20,
+                    }}
+                    onClick={principleCal}
+                >
+                    <Typography>Principal</Typography>
+                </Button>
+
+                {/* Top-Up Button */}
+                <Button
+                    variant="outlined"
+                    style={{ border: "none", color: "black" }}
+                    sx={{
+                        backgroundColor: activeButton === "TopUp" ? "#FFD500" : "transparent",
+                        borderRadius: 20,
+                    }}
+                    onClick={topUpCal}
+                >
+                    <Typography>Top-up</Typography>
+                </Button>
+            </Box>
+
+            <div className="flexBox">
+                <h6 className="closeDate">Close Date : </h6>
+                <input className="month" type="date" />
+
+                <h6 className="closeDate">Amount : </h6>
+                <input type="text" className="month" placeholder="Enter Amount" />
+
+                <br />
+                <br />
                 <BasicSelect />
-                <p className='styleOfPara'>*Create this when customer is paying INTEREST payment on his/her loan</p>
-                <button className='savaData'><span>Save</span></button>
+
+                <p className="styleOfPara">
+                    *Create this when customer is paying INTEREST payment on his/her loan
+                </p>
+                <button className="savaData">
+                    <span>Save</span>
+                </button>
             </div>
         </>
-    )
+    );
 }
 
 export default Interest;
