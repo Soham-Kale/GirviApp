@@ -24,8 +24,6 @@ import {
 } from "./Component/index.js"
 import { useState } from 'react';
 
-
-
 function App() {
 
   const [currentNumber , setCurrentNumber] = useState("");

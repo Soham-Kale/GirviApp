@@ -18,7 +18,7 @@ function View() {
                     <td>16-03-2024</td>
                     <td>20,000</td>
                     <td>2.5%</td>
-                    <td>12 Months</td>
+                    {/* <td>12 Months</td> */}
                 </tr>
                 <tr>
                     <td>#</td>

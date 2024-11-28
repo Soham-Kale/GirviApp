@@ -106,7 +106,7 @@ function Table2() {
             <td className='bold0'>16-03-2024</td>
             <td className='bold0'>20,000</td>
             <td className='bold0'>2.5%</td>
-            <td className='bold0'>12 Months</td>
+            {/* <td className='bold0'>12 Months</td> */}
           </tr>
           <tr>
             <td>#</td>
@@ -171,7 +171,7 @@ function Table3() {
             <td className='data0'>Pending</td>
             <td className='data'><h5>2,000.00</h5></td>
             <td className='data2'><h5>0.00</h5></td>
-            <Button sx={{ml: 5}} onClick={AddLoanPage}> <Add  sx={{border: '0.3px solid #FFD500 ', borderRadius: "100px", color: "#FFD500"}}/> </Button>
+            <Button sx={{ml: 1}} onClick={AddLoanPage}> <Add  sx={{border: '0.3px solid #FFD500 ', borderRadius: "100px", color: "#FFD500"}}/> </Button>
           </tr>
         </tbody>
 

@@ -26,7 +26,7 @@
   margin: auto;
   border: 1px solid black;
   width: 343px;
-  height: 250px;
+  height: 263px;
   border-radius: 20px;
   background-color: #FFFCF0;
 }
@@ -67,6 +67,10 @@
 .label3 {
   padding-left: 20px;
   margin-top: 8px;
+  height: 5px;
+  font-family: Inter;
+  font-size: 11px;
+  font-weight: 400;
 }
 
 .lastDiv {

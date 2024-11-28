@@ -92,7 +92,7 @@ function Input3() {
                 <input className='input1' type="text" />
                 </div>
                 <div class="form-group">
-                <label className='label1'>Today’s Gold rate for 1gm<span style={style}>*</span> :</label> <br />
+                <label className='label1'>Today’s Gold rate 1gm<span style={style}>*</span> :</label> <br />
                 <input className='input1' type="text" />
             </div>
         </div>

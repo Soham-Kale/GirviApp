@@ -89,7 +89,7 @@ export const AddCustomer = () => {
 
           <Box className="frow">   
             <Box sx={{
-              ml: {lg: "-375px", sm: "-200px", xs: "-100px" , md: "-250px"}
+              ml: {lg: "-315px", sm: "-200px", xs: "-100px" , md: "-250px"}
             }}>   
               <label className='label1'>Upload Aadhaar Card :</label> <br />
               <input className='inputBo' type="text" value={aadhar} onChange={(e) => setAadhar(e.target.value)}/>
