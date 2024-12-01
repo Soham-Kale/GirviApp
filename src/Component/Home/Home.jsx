@@ -10,7 +10,7 @@ import './home.css'
 
 function Home() {
     return (
-        <Box sx={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+        <Box sx={{ heigth: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
             <Typography variant='h5' sx={{
                 mt: "10px",
                 ml: { lg: "28%", xs: "10px", sm: "24%", md: "26%" }
