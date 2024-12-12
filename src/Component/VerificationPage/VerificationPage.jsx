@@ -111,7 +111,7 @@ function VerificationPage({ currentNumber }) {
                     </Typography>
 
                     <Box sx={{
-                        ml: {xl: "40%", lg: "35%",md: "35%",  sm: "20%", xs: "10%"},
+                        ml: {xl: "40%", lg: "38%",md: "35%",  sm: "20%", xs: "10%"},
                         width: {sx: "20px", }
                     }} className="otp-area">
                         {otpVal.map((data, i) => {

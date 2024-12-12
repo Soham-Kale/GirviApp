@@ -21,8 +21,8 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@mui/icons-material": "^5.15.20",
-    "@mui/material": "^5.16.1",
-    "@mui/styled-engine-sc": "^6.0.0-alpha.18",
+    "@mui/material": "^5.16.11",
+    "@mui/styled-engine-sc": "^6.2.0",
     "axios": "^1.7.2",
     "firebase": "^10.12.2",
     "otp-input-react": "^0.3.0",
@@ -34,7 +34,7 @@
     "react-phone-input-2": "^2.15.1",
     "react-router-dom": "^6.23.1",
     "react-toastify": "^10.0.5",
-    "styled-components": "^6.1.11"
+    "styled-components": "^6.1.13"
   },
   "devDependencies": {
     "@capacitor/assets": "^3.0.5",

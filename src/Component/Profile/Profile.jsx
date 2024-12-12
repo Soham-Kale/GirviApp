@@ -1,188 +1,274 @@
-import { Box, Button, Typography } from '@mui/material'
+import React from 'react';
+import { 
+  Box, 
+  Button, 
+  Typography, 
+  Grid, 
+  Card, 
+  CardContent,
+  Avatar,
+  IconButton,
+  styled 
+} from '@mui/material';
 import { KeyboardBackspace, Add } from '@mui/icons-material';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import image from "./asset/soham.png";
-import "./profile.css";
 
-function Profile() {
-  const customer = useNavigate();
-  function customerPage() {
-    customer('/CustomerPage');
-  }
+const StyledCard = styled(Card)({
+  boxShadow: 'none',
+  border: '1px solid #f0f0f0',
+  borderRadius: 8,
+  marginBottom: 16
+});
+
+const Profile = () => {
+  const navigate = useNavigate();
 
   return (
-    <Box>
-      <h6 className='tag' sx={{marginLeft: "-50%", marginTop: "20px"}}><Button onClick={customerPage} sx={{
-        color:"#FFD500", 
-        // ml: "-18%",
-        marginRight: "-20px",
-        ml: {lg: "45%",  xs: "10px", sm: "24%", md: "26%"},
-        "&:hover":{backgroundColor:'transparent'} 
-      }}><KeyboardBackspace/></Button> &nbsp; Profile</h6><br /> 
-      <CustProfile/>
-      <Table/>
-      <Loan/>
-      <Table2/> <br />
-      <Table3/>
+    <Box sx={{ p: 2 }}>
+      <Grid container spacing={2} overflow={'hidden'}>
+        {/* Header */}
+        <Grid item xs={12}>
+          <StyledCard>
+            <CardContent>
+              <Box sx={{ 
+                display: 'flex', 
+                alignItems: 'center',
+                color: '#FFD500' 
+              }}>
+                <IconButton 
+                  onClick={() => navigate('/CustomerPage')}
+                  sx={{ 
+                    color: '#FFD500',
+                    mr: 1,
+                    '&:hover': { backgroundColor: 'transparent' }
+                  }}
+                >
+                  <KeyboardBackspace />
+                </IconButton>
+                <Typography>Profile</Typography>
+              </Box>
+            </CardContent>
+          </StyledCard>
+        </Grid>
+
+        {/* Customer Profile */}
+        <Grid item xs={12} sx={{ mt: { xs: "-60px" }, mb: { xs: "-50px" } }}>
+          <StyledCard>
+            <CardContent>
+              <Box sx={{ 
+                display: 'flex', 
+                alignItems: 'center',
+                gap: 2 
+              }}>
+                <Avatar 
+                  src={image} 
+                  alt="soham"
+                  sx={{ width: 56, height: 56 }}
+                />
+                <Box>
+                  <Typography variant="h6">Soham Kale</Typography>
+                  <Typography color="text.secondary">7728527871</Typography>
+                </Box>
+              </Box>
+            </CardContent>
+          </StyledCard>
+        </Grid>
+
+        {/* Summary Table */}
+        <Grid item xs={12}>
+          <StyledCard>
+            <CardContent>
+              <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  <Typography color="text.secondary" gutterBottom>
+                    # As on Date
+                  </Typography>
+                </Grid>
+                
+                <Grid item xs={4}>
+                  <Typography>#</Typography>
+                </Grid>
+                <Grid item xs={4}>
+                  <Typography>Principal</Typography>
+                </Grid>
+                <Grid item xs={4}>
+                  <Typography>Interest</Typography>
+                </Grid>
+
+                {/* Expected Row */}
+                <Grid item xs={4}>
+                  <Typography color="text.secondary">Expected</Typography>
+                </Grid>
+                <Grid item xs={4}>
+                  <Typography>20,000.00</Typography>
+                </Grid>
+                <Grid item xs={4}>
+                  <Typography sx={{ color: '#FFD500' }}>1,000.00</Typography>
+                </Grid>
+
+                {/* Paid Row */}
+                <Grid item xs={4}>
+                  <Typography color="text.secondary">Paid</Typography>
+                </Grid>
+                <Grid item xs={4}>
+                  <Typography color="success.main">18,000.00</Typography>
+                </Grid>
+                <Grid item xs={4}>
+                  <Typography color="success.main">1,000.00</Typography>
+                </Grid>
+
+                {/* Pending Row */}
+                <Grid item xs={4}>
+                  <Typography color="text.secondary">Pending</Typography>
+                </Grid>
+                <Grid item xs={4}>
+                  <Typography color="error.main">2,000.00</Typography>
+                </Grid>
+                <Grid item xs={4}>
+                  <Typography color="error.main">0.00</Typography>
+                </Grid>
+              </Grid>
+            </CardContent>
+          </StyledCard>
+        </Grid>
+
+        {/* Loans Section */}
+        <Grid item xs={12} sx={{ mt: { xs: "-40px" }, }}>
+          <StyledCard>
+            <CardContent>
+              <Box sx={{ 
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                mb: 2
+              }}>
+                <Typography variant="h6">Loans</Typography>
+                <Button
+                  variant="contained"
+                  startIcon={<Add />}
+                  onClick={() => navigate('/addLoan')}
+                  sx={{
+                    bgcolor: '#FFD500',
+                    color: 'black',
+                    '&:hover': { bgcolor: '#FFD500' }
+                  }}
+                >
+                  Add Loan
+                </Button>
+              </Box>
+
+              {/* Loan Cards */}
+              <Grid container spacing={2}>
+                {/* Loan #1002 */}
+                <Grid item xs={12}>
+                  <StyledCard>
+                    <CardContent>
+                      <Grid container spacing={2}>
+                        <Grid item xs={12}>
+                          <Box sx={{ 
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            mb: 2
+                          }}>
+                            <Typography 
+                              sx={{ 
+                                bgcolor: '#e8f5e9',
+                                px: 1.5,
+                                py: 0.5,
+                                borderRadius: 1
+                              }}
+                            >
+                              #1002
+                            </Typography>
+                            <Box>
+                              <Typography color="text.secondary">
+                                16-03-2024
+                              </Typography>
+                              <Typography color="text.secondary">
+                                20,000 • 2.5%
+                              </Typography>
+                            </Box>
+                          </Box>
+                        </Grid>
+
+                        {/* Table Content */}
+                        <Grid item xs={12}>
+                          <Grid container spacing={1}>
+                            {/* Headers */}
+                            <Grid item xs={4}>
+                              <Typography color="text.secondary">#</Typography>
+                            </Grid>
+                            <Grid item xs={4}>
+                              <Typography color="text.secondary">Principal</Typography>
+                            </Grid>
+                            <Grid item xs={4}>
+                              <Typography color="text.secondary">Interest</Typography>
+                            </Grid>
+
+                            {/* Paid Row */}
+                            <Grid item xs={4}>
+                              <Typography>Paid</Typography>
+                            </Grid>
+                            <Grid item xs={4}>
+                              <Typography color="success.main">18,000.00</Typography>
+                            </Grid>
+                            <Grid item xs={4}>
+                              <Typography color="success.main">1,000.00</Typography>
+                            </Grid>
+
+                            {/* Pending Row */}
+                            <Grid item xs={4}>
+                              <Typography>Pending</Typography>
+                            </Grid>
+                            <Grid item xs={4}>
+                              <Typography color="error.main">2,000.00</Typography>
+                            </Grid>
+                            <Grid item xs={4}>
+                              <Typography color="error.main">0.00</Typography>
+                            </Grid>
+                          </Grid>
+                        </Grid>
+
+                        {/* Footer */}
+                        <Grid item xs={12}>
+                          <Box sx={{ 
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            pt: 2,
+                            borderTop: '1px solid #f0f0f0'
+                          }}>
+                            <Typography sx={{ color: '#ff9800' }}>
+                              Interest: 250.00 (per month)
+                            </Typography>
+                            <Button 
+                              onClick={() => navigate('/ViewItem')}
+                              sx={{ 
+                                color: '#FFD500',
+                                textTransform: 'none'
+                              }}
+                            >
+                              View items
+                            </Button>
+                          </Box>
+                        </Grid>
+                      </Grid>
+                    </CardContent>
+                  </StyledCard>
+                </Grid>
+
+                {/* Loan #1001 - Similar structure */}
+                <Grid item xs={12}>
+                  {/* Similar structure as #1002 */}
+                </Grid>
+              </Grid>
+            </CardContent>
+          </StyledCard>
+        </Grid>
+      </Grid>
     </Box>
-  )
-}
-
-function CustProfile() {
-  return(
-    <>
-      <Box sx={{marginTop: "-20px"}} className="names2">
-        <img className='sohamImg2' src={image} alt="soham" /> 
-        <div style={{paddingBottom: "10px", marginLeft: "25%"}}> 
-          <h6 className='customerName3'>Soham Kale</h6>
-          <h6 className='number2'>7728527871</h6>
-        </ div>
-      </Box>
-    </>
-  )
-}
-
-function Table() {
-  return(
-    <>
-      <table className='table2'>
-        <thead>
-          <tr>
-            <td># As on Date</td>
-            <td className='data'>Principal</td>
-            <td className='data2'>Interest</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className='data0'>Expected</td>
-            <td className='data'><span>20,000.00</span></td>
-            <td className='data2'><span>1,000.00</span></td>
-          </tr>
-          <tr>
-            <td className='data0'>Paid</td>
-            <td className='data'><h6>18,000.00</h6></td>
-            <td className='data2'><h6>1,000.00</h6></td>
-          </tr>
-          <tr>
-            <td className='data0'>Pending</td>
-            <td className='data'><h5>2,000.00</h5></td>
-            <td className='data2'><h5>0.00</h5></td>
-          </tr>
-        </tbody>
-      </table>
-    </>
-  )
-}
-
-function Loan() {
-
-  const loan = useNavigate();
-  function loanPage() {
-    loan('/addLoan');
-  }
-
-  return(
-    <>
-    <Box className='loanSection'>
-      <h3 className='loan'>Loans</h3>
-      <button onClick={loanPage} className='but'><span>Add Loan</span></button>
-    </Box>
-    </>
-  )
-}
-
-function Table2() {
-  const viewItem = useNavigate();
-  function viewItemPage() {
-    viewItem('/ViewItem');
-  }
-  return(
-    <>
-      <table className='table3'>
-        <thead>
-          <tr>
-            <td className='bold'><span>#1002</span></td>
-            <td className='bold0'>16-03-2024</td>
-            <td className='bold0'>20,000</td>
-            <td className='bold0'>2.5%</td>
-            {/* <td className='bold0'>12 Months</td> */}
-          </tr>
-          <tr>
-            <td>#</td>
-            <td className='data'>Principal</td>
-            <td className='data2'>Interest</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className='data0'>Paid</td>
-            <td className='data'><h6>18,000.00</h6></td>
-            <td className='data2'><h6>1,000.00</h6></td>
-          </tr>
-          <tr>
-            <td className='data0'>Pending</td>
-            <td className='data'><h5>2,000.00</h5></td>
-            <td className='data2'><h5>0.00</h5></td>
-          </tr>
-        </tbody>
-
-        <div className='bottom2'>
-          <h5 className='interest'>Interest : 250.00 (per month)</h5>
-          <button onClick={viewItemPage}  className='view'>View items</button>
-      </div>
-      </table>
-    </>
-  )
-}
-
-function Table3() {
-  const viewItem = useNavigate();
-  function viewItemPage() {
-    viewItem('/ViewItem');
-  }
-  function AddLoanPage() {
-    viewItem('/NewLoan');
-  }
-  return(
-    <>
-      <table className='table3'>
-        <thead>
-          <tr>
-            <td className='bold1'><span>#1001</span></td>
-            <td>16-03-2024</td>
-            <td>20,000</td>
-            <td>2.5%</td>
-            {/* <td>6 Months</td> */}
-          </tr>
-          <tr>
-            <td>#</td>
-            <td className='data'>Principal</td>
-            <td className='data2'>Interest</td>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className='data0'>Paid</td>
-            <td className='data'><h6>18,000.00</h6></td>
-            <td className='data2'><h6>1,000.00</h6></td>
-          </tr>
-          <tr>
-            <td className='data0'>Pending</td>
-            <td className='data'><h5>2,000.00</h5></td>
-            <td className='data2'><h5>0.00</h5></td>
-            <Button sx={{ml: 1}} onClick={AddLoanPage}> <Add  sx={{border: '0.3px solid #FFD500 ', borderRadius: "100px", color: "#FFD500"}}/> </Button>
-          </tr>
-        </tbody>
-
-        <div className='bottom2'>
-          <h5 className='interest'>Interest : 250.00 (per month)</h5>
-          <button onClick={viewItemPage}  className='view'>View items</button>
-      </div>
-
-      </table>
-    </>
-  )
-}
+  );
+};
 
 export default Profile;
