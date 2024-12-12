@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Box, Button, IconButton, Stack, TextField, Typography } from '@mui/material'
+import { Avatar, Box, Button, IconButton, Stack, TextField, Typography } from '@mui/material'
 import { Ballot, KeyboardBackspace, OtherHouses, People, PermIdentity } from '@mui/icons-material'
 import image from "../asset/soham.png"
 
@@ -60,33 +60,51 @@ function Dues() {
 
     return (
         <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-            <h6 className='tag'><Button onClick={HomePage}
-                sx={{
-                    color: "#FFD500",
-                    marginRight: "-30px",
-                    ml: {lg: "45%",  xs: "10px", sm: "24%", md: "26%"},
-                    "&:hover": { backgroundColor: 'transparent' }
-                }}><KeyboardBackspace /></Button> &nbsp; Past Dues</h6><br /> <br />
+
+            <Typography level="h3" sx={{
+                height: '20px',
+                mt: { lg: '10px', sm: "20px", xs: "10%", md: "30px" },
+                color: '#FFD500',
+                fontFamily: 'Inter',
+                textAlign: 'center',
+                fontSize: '20px',
+                fontWeight: 600,
+                mr: { lg: "39%", sm: "20%", xs: "45%" },
+            }}> <Button onClick={HomePage} sx={{
+                color: "#FFD500",
+                marginRight: "-20px",
+                ml: { lg: "40%", xs: "10px", sm: "24%", md: "40%" },
+                "&:hover": { backgroundColor: 'transparent' }
+            }}><KeyboardBackspace /></Button> Past Dues</Typography>
 
             <Box sx={{
                 backgroundColor: "#FFFFFF",
                 boxShadow: '2',
-                width: { lg: '20%', sm: '60%', xs: '77%' },
+                width: { lg: '23%', sm: '60%', xs: '77%' },
                 margin: 'auto',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                mt: "-60px",
+                mt: "45px",
                 padding: "3px",
+                mb: "60px",
                 borderRadius: 20
             }}>
                 <Button variant='outlined' style={{ border: 'none', color: 'black' }} sx={{ backgroundColor: active ? '#FFD500' : '#00000 ', borderRadius: 20, }} onClick={onUpcomingDueClick}><Typography>Upcoming Dues</Typography></Button>
                 <Button variant='outlined' style={{ border: 'none', color: 'black' }} sx={{ backgroundColor: selected ? '#FFD500' : '#00000 ', borderRadius: 20, }} onClick={onPastDueClick}><Typography>Past Dues</Typography></Button>
-            </Box> 
+            </Box>
 
-            <DynamicSearch/>
+            <DynamicSearch />
 
-            <Box sx={{ position: 'relative', mt: 'auto' }} className="bottom">
+            <Box sx={{
+                position: 'relative',
+                mt: 'auto',
+                backgroundColor: '#FFD500',
+                width: '100vw',
+                height: '73px',
+                borderRadius: '0px 0px 35px 35px',
+                bottom: '0px',
+            }} className="bottom">
                 <Stack direction="row" sx={{ display: 'flex', justifyContent: 'space-around' }}>
                     <IconButton
                         onClick={() => handleButtonClick('home')}
@@ -167,17 +185,18 @@ const DynamicSearch = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 variant="outlined"
                 fullWidth
-                sx={{ 
+                sx={{
                     margin: 'auto',
                     display: 'block',
                     width: '340px',
                     mb: "40px",
-                    mt: "-20px", 
+                    mt: "-20px",
                 }}
             />
 
-            <Typography sx={{ marginBottom: "20px", mt: "-20px" ,
-                ml: {lg: "40%",  xs: "14%", sm: "32%", md: "35%"}, 
+            <Typography sx={{
+                marginBottom: "20px", mt: "-20px",
+                ml: { lg: "40%", xs: "14%", sm: "32%", md: "35%" },
             }} >16-03-2024</Typography>
 
             {filteredCustomers.map((customer, index) => (
@@ -190,37 +209,146 @@ const DynamicSearch = () => {
 function People4() {
     return (
         <>
-            <Box sx={{mb: 2}} className="names">
-                <img className='sohamImg' src={image} alt="soham" />
-                <h6 className='customerName'>Soham Kale</h6>
-                <h6 className='amount'>10,000.00</h6>
+            <Box sx={{
+                mb: { lg: 2, sm: 2, xs: 2 },
+                margin: 'auto',
+                display: 'block',
+                height: '55px',
+                width: '343px',
+                textAlign: 'left',
+                boxShadow: '0px 1px 1px 1px rgb(111, 118, 125)',
+                borderRadius: '12px',
+                pl: '10px',
+            }}
+            // className="names"
+            >
+                <Avatar sx={{
+                    width: '38px',
+                    borderRadius: '20px',
+                    ml: '10px',
+                    float: 'left',
+                    mt: { lg: "10px", sm: "5px", xs: "4px" },
+                }} alt="Soham Kale" src={image} />
+                <Typography sx={{
+                    mb: "5px",
+                    mt: { lg: "15px", },
+                    fontSize: { lg: "18px", xs: "12px", sm: "12px", md: "11px" },
+                    width: "400px",
+                    height: '15px',
+                    color: '#000000',
+                    fontWeight: 400,
+                    pl: "50px",
+                    pt: "12px",
+                    ml: { lg: "30px", xs: "12px" }
+                }} >Soham Kale</Typography>
+                {/* <h6 className='customerName'> Kale</h6> */}
+
+                <Typography sx={{
+                    textAlign: 'end',
+                    mr: '20px',
+                    mt: "-6px",
+                }}
+                //className='amount'
+                >10,000.00</Typography>
             </Box>
         </>
     )
 }
-
 
 function People2() {
     return (
         <>
-            <Box sx={{mb: 2}} className="names">
-                <img className='sohamImg' src={image} alt="soham" />
-                <h6 className='customerName'>Harsh Kale</h6>
-                <h6 className='amount'>10,000.00</h6>
+            <Box sx={{
+                mb: { lg: 2, sm: 2, xs: 2 },
+                margin: 'auto',
+                display: 'block',
+                height: '55px',
+                width: '343px',
+                textAlign: 'left',
+                boxShadow: '0px 1px 1px 1px rgb(111, 118, 125)',
+                borderRadius: '12px',
+                pl: '10px',
+            }}
+            // className="names"
+            >
+                <Avatar sx={{
+                    width: '38px',
+                    borderRadius: '20px',
+                    ml: '10px',
+                    float: 'left',
+                    mt: { lg: "10px", sm: "5px", xs: "4px" },
+                }} alt="Soham Kale" src={image} />
+                <Typography sx={{
+                    mb: "5px",
+                    mt: { lg: "15px", },
+                    fontSize: { lg: "18px", xs: "12px", sm: "12px", md: "11px" },
+                    width: "400px",
+                    height: '15px',
+                    color: '#000000',
+                    fontWeight: 400,
+                    pl: "50px",
+                    pt: "12px",
+                    ml: { lg: "30px", xs: "12px" }
+                }} >Parth Kale</Typography>
+                {/* <h6 className='customerName'> Kale</h6> */}
+
+                <Typography sx={{
+                    textAlign: 'end',
+                    mr: '20px',
+                    mt: "-6px",
+                }}
+                //className='amount'
+                >10,000.00</Typography>
             </Box>
         </>
     )
 }
 
-
 function People3() {
     return (
         <>
-            <div className="names">
-                <img className='sohamImg' src={image} alt="soham" />
-                <h6 className='customerName'>Om Dixit</h6>
-                <h6 className='amount'>10,000.00</h6>
-            </div>
+            <Box sx={{
+                mb: { lg: 2, sm: 2, xs: 2 },
+                margin: 'auto',
+                display: 'block',
+                height: '55px',
+                width: '343px',
+                textAlign: 'left',
+                boxShadow: '0px 1px 1px 1px rgb(111, 118, 125)',
+                borderRadius: '12px',
+                pl: '10px',
+            }}
+            // className="names"
+            >
+                <Avatar sx={{
+                    width: '38px',
+                    borderRadius: '20px',
+                    ml: '10px',
+                    float: 'left',
+                    mt: { lg: "10px", sm: "5px", xs: "4px" },
+                }} alt="Soham Kale" src={image} />
+                <Typography sx={{
+                    mb: "5px",
+                    mt: { lg: "15px", },
+                    fontSize: { lg: "18px", xs: "12px", sm: "12px", md: "11px" },
+                    width: "400px",
+                    height: '15px',
+                    color: '#000000',
+                    fontWeight: 400,
+                    pl: "50px",
+                    pt: "12px",
+                    ml: { lg: "30px", xs: "12px" }
+                }} >Harsh Kale</Typography>
+                {/* <h6 className='customerName'> Kale</h6> */}
+
+                <Typography sx={{
+                    textAlign: 'end',
+                    mr: '20px',
+                    mt: "-6px",
+                }}
+                //className='amount'
+                >10,000.00</Typography>
+            </Box>
         </>
     )
 }

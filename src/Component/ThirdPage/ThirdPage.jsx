@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import image from "../asset/img.png"
-import "./third.css"
 import { useState } from "react";
-import { Box, Button, Grid, Input, TextField, Typography } from "@mui/material";
+import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 
 function ThirdPage() {
 
@@ -18,7 +17,7 @@ function ThirdPage() {
 
     return(
         <>
-            <Box className='firstBox' sx={{ height: '100%' }}>
+            <Box sx={{ height: '100vh', fontSize: "62.5%" }}>
             <Grid
                 direction="column"
                 alignItems="center"
@@ -30,8 +29,8 @@ function ThirdPage() {
                         component="img"
                         src={image}
                         sx={{
-                            width: { lg: 600, sm: 370, xs: '80%' },
-                            height: { lg: 600, sm: 350, xs: 'auto' },
+                            width: { lg: 700, sm: '67%', xs: '66%' },
+                            height: { lg: 630, sm: 'auto', xs: 'auto' },
                             objectFit: 'cover',
                         }}
                     />
@@ -61,10 +60,29 @@ function ThirdPage() {
                 >Create your new account</Typography>
 
                 <Box sx={{ display: 'flex', alignItems: 'center', flexDirection: 'column', justifyContent: 'center' }}>
-                        <input sx={{height: "50px"}} type="text" className="inpBox" placeholder="Business Name *" />
-                        <input type="text" className="inpBox" placeholder="First Name *"/>
-                        <input type="text" className="inpBox" placeholder="Last Name *"/>
-                        <input type="text" className="inpBox" placeholder="Mobile Number  *"/>
+                        <TextField 
+                                sx={{ 
+                                    width: { lg: "300px", sm: "250px", xs: "250px"},
+                                    height: { lg: "46px", sm: "40px", xs: "30px"},
+                                    mb: {lg: "15px", sm: "20px", xs: "30px"},
+                                    mt: { sx: "3px", xs: "3px" }
+                                }}
+                        placeholder="Business Name *" />
+                        <TextField sx={{ 
+                            width: { lg: "300px", sm: "250px", xs: "250px"},
+                            height: { lg: "46px", sm: "40px", xs: "30px"},
+                            mb: {lg: "15px", sm: "20px", xs: "30px"},
+                         }} placeholder="First Name *"/>
+                        <TextField sx={{ 
+                            width: { lg: "300px", sm: "250px", xs: "250px"},
+                            height: { lg: "46px", sm: "40px", xs: "30px"},
+                            mb: {lg: "15px", sm: "20px", xs: "30px"},
+                         }} placeholder="Last Name *"/>
+                        <TextField sx={{ 
+                            width: { lg: "300px", sm: "250px", xs: "250px"},
+                            height: { lg: "46px", sm: "40px", xs: "30px"},
+                            mb: {lg: "15px", sm: "20px", xs: "30px"},
+                         }} placeholder="Mobile Number  *"/>
                 </Box>
 
                 <Typography sx={{
@@ -97,7 +115,7 @@ function ThirdPage() {
                     fontSize: '14px',
                     fontWeight: '400',
                     textAlign: 'center',
-                    marginTop: "-40px"
+                    mt: { lg: "-40px", sx: "-45px", xs: "-45px"}
                 }}>Already have an Account?  <Button onClick={next} sx={{
                     fontFamily: 'Poppins',
                     fontSize: '14px',

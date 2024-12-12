@@ -1,11 +1,10 @@
 import image from './asset/soham.png'
 import React from 'react';
 import { useNavigate } from 'react-router-dom'
-import { Box, Button, IconButton, Stack, TextField, Typography } from '@mui/material'
+import { Avatar, Box, Button, IconButton, Skeleton, Stack, TextField, Typography } from '@mui/material'
 import AddIcon from '@mui/icons-material/Add';
 import { Ballot, KeyboardBackspace, OtherHouses, People, PermIdentity } from '@mui/icons-material'
 import { useState } from 'react';
-import './customer.css'
 
 function CustomerPage() {
 
@@ -44,18 +43,61 @@ function CustomerPage() {
 
   return (
     <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-      <h6 className='tag'><Button onClick={HomePage} sx={{
+      <Typography level="h3" sx={{
+        height: '20px',
+        mt: { lg: '10px', sm: "20px", xs: "10%", md: "30px" },
+        color: '#FFD500',
+        fontFamily: 'Inter',
+        textAlign: 'center',
+        fontSize: '20px',
+        fontWeight: 600,
+        mr: { lg: "43%", sm: "20%", xs: "45%"},
+      }}> <Button onClick={HomePage} sx={{
         color: "#FFD500",
         marginRight: "-20px",
-        ml: {lg: "40%",  xs: "10px", sm: "24%", md: "26%"},
+        ml: {lg: "40%",  xs: "10px", sm: "24%", md: "40%"},
         "&:hover": { backgroundColor: 'transparent' }
-      }}><KeyboardBackspace /></Button> Customer</h6>
+      }}><KeyboardBackspace /></Button>  Customer</Typography>
 
       <DynamicSearch />  <br /><br /><br /><br /><br /><br />
 
-      <button onClick={addPage} className='plusBtn'><AddIcon className='plus' /></button>
+      <Button onClick={addPage} sx={{
+            width: '52px',
+            height: '54px',
+            ml: '300px',
+            border: 'none',
+            backgroundColor: '#FFFFFF',
+            position: 'absolute',
+            mr: '40px',
+            right: '10px',
+            bottom: '20%',
+            
+      }} >
+        <AddIcon sx={{
+            borderRadius: "100%",
+            width: "auto",
+            height: '35px',
+            top: '663px',
+            left: '319px',
+            border: '1px solid black',
+            fontFamily: 'Inter',
+            fontSize: '40px',
+            fontWeight: 400,
+            lineHeight: '48.41px',
+            color: '#FFD500',
+            alignItems: 'end',
+        }} /></Button>
 
-      <Box sx={{ position: 'relative', mt: 'auto' }} className='bottom'>
+      <Box sx={{ 
+        // bottom --> className
+          position: 'relative', 
+          mt: 'auto',
+          backgroundColor: '#FFD500',
+          width: '100vw',
+          height: '73px',
+          borderRadius: '0px 0px 35px 35px',
+          bottom: '0px', 
+        }}>
       <Stack direction="row" sx={{ display: 'flex', justifyContent: 'space-around' }}>
           <IconButton
             onClick={() => handleButtonClick('home')}
@@ -108,6 +150,7 @@ function CustomerPage() {
               }}>Account</Typography>
             </Button>
           </IconButton>
+
         </Stack>
       </Box>
     </Box>
@@ -140,7 +183,7 @@ const DynamicSearch = () => {
               margin: 'auto',
               display: 'block',
               mb: "40px",
-              mt: {lg: "35px", xs: "-50px", sm: "-30px"},
+              mt: {lg: "35px", xs: "40px", sm: "30px"},
               width: { lg: "350px", xs: "250px", sm: "300px", md: "250px" },
             }}
       />
@@ -158,12 +201,14 @@ function People1() {
   }
   return (
     <>
-      <Button onClick={profilePage} className='styleForBtn' 
+      <Button onClick={profilePage}  
         sx={{ "&:hover": { backgroundColor: 'transparent' },
         display: 'flex',
         justifyContent:"center", 
         alignItems: "center",
-        margin: "auto"
+        margin: "auto",
+        border: 'none',
+        backgroundColor: '#FFFFFF',
         }}
       >
         <Box sx={{
@@ -173,19 +218,39 @@ function People1() {
                 height: { lg: "58px", xs: "45px", sm: "50px", md: "45px" },
                 boxShadow: '0px 1px 1px 1px rgb(111, 118, 125)',
                 borderRadius: '12px',
-            }} className="names">
-          <img className='sohamImg' src={image} alt="soham" />
-          <Box sx={{ marginLeft: "20%", marginTop: "-6px" }}>
-            <Typography sx={{
-                        mb: "5px", mt: "-8px",
-                        fontSize: { lg: "14px", xs: "12px", sm: "12px" , md: "11px" },
-                        width: "400px",
-                    }} className='customerName'>Harsh Kale</Typography>
+                textAlign: 'left',
+                pl: '10px',           
+              }} >
+          <Avatar sx={{
+            width: '38px',
+            borderRadius: '20px',
+            ml: '10px',
+            float: 'left',
+            mt: { lg: "10px", sm: "5px" , xs: "4px"},
+          }} alt="Soham Kale" src={image} />
+
+          <Box sx={{ marginLeft: "20%", marginTop: "6px" }}>
             <Typography sx={{
                         mb: "5px", mt: "5px",
                         fontSize: { lg: "14px", xs: "12px", sm: "12px" , md: "11px" },
                         width: "400px",
-                    }} className='number'>9274353652</Typography>
+                        height: '15px',
+                        color: '#000000',
+                        fontWeight: 400,
+                        ml: { lg: "", xs: "12px"}
+                    }} >Harsh Kale</Typography>
+            <Typography sx={{
+                        mb: "5px", 
+                        mt: { lg: "-10px", md: "", sm: "", xs: "-15px"},
+                        fontSize: { lg: "14px", xs: "12px", sm: "12px" , md: "11px" },
+                        width: "400px",
+                        height: '12px',
+                        color: '#010101',
+                        fontWeight: 400,
+                        pt: '15px',
+                        pl: '15px',
+                        ml: { lg: "", sm: "", xs: ""}
+                }} >9274353652</Typography>
           </Box>
         </Box>
       </Button>
@@ -200,12 +265,14 @@ function People2() {
   }
   return (
     <>
-      <Button onClick={profilePage} className='styleForBtn' 
+      <Button onClick={profilePage} 
         sx={{ "&:hover": { backgroundColor: 'transparent' },
         display: 'flex',
         justifyContent:"center", 
         alignItems: "center",
-        margin: "auto"
+        margin: "auto",
+        border: 'none',
+        backgroundColor: '#FFFFFF',
         }}
       >
         <Box sx={{
@@ -215,19 +282,41 @@ function People2() {
                 height: { lg: "58px", xs: "45px", sm: "50px", md: "45px" },
                 boxShadow: '0px 1px 1px 1px rgb(111, 118, 125)',
                 borderRadius: '12px',
-            }} className="names">
-          <img className='sohamImg' src={image} alt="soham" />
-          <Box sx={{ marginLeft: "20%", marginTop: "-6px" }}>
-            <Typography sx={{
-                        mb: "5px", mt: "-8px",
-                        fontSize: { lg: "14px", xs: "12px", sm: "12px" , md: "11px" },
-                        width: "400px",
-                    }} className='customerName'>Om Dixit</Typography>
+                textAlign: 'left',
+                pl: '10px',
+            }}>
+            <Avatar sx={{
+              width: '38px',
+              borderRadius: '20px',
+              ml: '10px',
+              float: 'left',
+              mt: { lg: "10px", sm: "5px" , xs: "4px"},
+          }} alt="Soham Kale" src={image} />
+
+          <Box sx={{ marginLeft: "20%", marginTop: "6px" }}>
             <Typography sx={{
                         mb: "5px", mt: "5px",
                         fontSize: { lg: "14px", xs: "12px", sm: "12px" , md: "11px" },
                         width: "400px",
-                    }} className='number'>9274353652</Typography>
+                        height: '15px',
+                        fontFamily: "Inter",
+                        fontWeight: 400,
+                        color: '#000000',
+                        ml: { lg: "", xs: "12px"}
+                    }} >Soham Kale</Typography>
+            <Typography sx={{
+                        mb: "5px", 
+                        mt: { lg: "-10px", md: "", sm: "", xs: "-15px"},
+                        fontSize: { lg: "14px", xs: "12px", sm: "12px" , md: "11px" },
+                        width: "400px",
+                        height: '12px',
+                        fontWeight: 400,
+                        fontFamily: "Inter",
+                        color: '#010101',
+                        pt: '15px',
+                        pl: '15px',
+                        ml: { lg: "-2px", sm: "", xs: ""}
+                }} >9074352287</Typography>
           </Box>
         </Box>
       </Button>
@@ -242,12 +331,14 @@ function People3() {
   }
   return (
     <>
-      <Button onClick={profilePage} className='styleForBtn' 
+      <Button onClick={profilePage}
         sx={{ "&:hover": { backgroundColor: 'transparent' },
         display: 'flex',
         justifyContent:"center", 
         alignItems: "center",
-        margin: "auto"
+        margin: "auto",
+        border: 'none',
+        backgroundColor: '#FFFFFF',
         }}
       >
         <Box sx={{
@@ -257,19 +348,41 @@ function People3() {
                 height: { lg: "58px", xs: "45px", sm: "50px", md: "45px" },
                 boxShadow: '0px 1px 1px 1px rgb(111, 118, 125)',
                 borderRadius: '12px',
-            }} className="names">
-          <img className='sohamImg' src={image} alt="soham" />
-          <Box sx={{ marginLeft: "20%", marginTop: "-6px" }}>
-            <Typography sx={{
-                        mb: "5px", mt: "-8px",
-                        fontSize: { lg: "14px", xs: "12px", sm: "12px" , md: "11px" },
-                        width: "400px",
-                    }} className='customerName'>Soham Kale</Typography>
+                textAlign: 'left',
+                pl: '10px',
+            }}>
+            <Avatar sx={{
+              width: '38px',
+              borderRadius: '20px',
+              ml: '10px',
+              float: 'left',
+              mt: { lg: "10px", sm: "5px" , xs: "4px"},
+          }} alt="Soham Kale" src={image} />
+
+          <Box sx={{ marginLeft: "20%", marginTop: "6px" }}>
             <Typography sx={{
                         mb: "5px", mt: "5px",
                         fontSize: { lg: "14px", xs: "12px", sm: "12px" , md: "11px" },
                         width: "400px",
-                    }} className='number'>9274353652</Typography>
+                        height: '15px',
+                        fontFamily: "Inter",
+                        fontWeight: 400,
+                        color: '#000000',
+                        ml: { lg: "", xs: "12px"}
+                    }} >Om Dixit</Typography>
+            <Typography sx={{
+                        mb: "5px", 
+                        mt: { lg: "-10px", md: "", sm: "", xs: "-15px"},
+                        fontSize: { lg: "14px", xs: "12px", sm: "12px" , md: "11px" },
+                        width: "400px",
+                        height: '12px',
+                        fontWeight: 400,
+                        fontFamily: "Inter",
+                        color: '#010101',
+                        pt: '15px',
+                        pl: '15px',
+                        ml: { lg: "-2px", sm: "", xs: ""}
+                }} >9860216530</Typography>
           </Box>
         </Box>
       </Button>
